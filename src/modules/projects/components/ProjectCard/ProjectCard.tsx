@@ -25,7 +25,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
       whileHover={{ y: -8 }}
       transition={{ type: 'spring', stiffness: 280, damping: 22 }}
     >
-      {/* Thumbnail placeholder */}
       <div className={styles.thumbnail} aria-hidden="true">
         <Image src={project.poster} alt={``} width={320} height={170} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: '100%', height: '100%', }} />
         {project.featured && <span className={styles.featuredBadge}>Featured</span>}
