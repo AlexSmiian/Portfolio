@@ -3,22 +3,29 @@ import type { Project } from '../types';
 export const PROJECTS: Project[] = [
   {
     id: 'project-1',
-    slug: 'neumorphic-dashboard',
-    title: 'Neumorphic Dashboard',
+    slug: 'customDropdown',
+    title: 'Custom Dropdown',
     description:
-      'A modern analytics dashboard built with neumorphic design principles — soft shadows, clean UI, real-time data visualization.',
+      'A generic, reusable React dropdown component with built-in search, async filtering, and full keyboard accessibility.',
     overview:
-      'A full-featured analytics dashboard that combines neumorphic aesthetics with powerful data visualization. Built with React and Chart.js, it supports real-time updates, customizable widgets, and a fully responsive layout that adapts seamlessly across all devices.',
-    tags: ['Next.js', 'TypeScript', 'CSS Modules', 'Chart.js'],
+      'A fully-featured custom dropdown built with React 19 and TypeScript. The component is generic — it works with plain strings, objects, or any custom shape via renderOption/renderSelected props. Supports debounced local search, async onSearch override, multi-dropdown coordination through custom DOM events, outside-click detection, and complete ARIA markup.',
+    tags: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
     features: [
-      'Real-time data updates via WebSocket',
-      'Customizable widget layout with drag-and-drop',
-      'Neumorphic design system with light/dark mode',
-      'Responsive across mobile, tablet, and desktop',
-      'Accessible — meets WCAG 2.1 AA standards',
+      'Generic <T> API — works with strings, objects, or any custom shape',
+      'Built-in debounced search with async onSearch override',
+      'Multi-dropdown coordination without shared state or context',
+      'Keyboard accessible — Enter to select, Escape to close',
+      'Full ARIA support: role="listbox", aria-expanded, aria-selected',
     ],
-    liveUrl: 'https://example.com',
-    repoUrl: 'https://github.com/alex/neumorphic-dashboard',
+    screenshots: [
+      '/images/projects/customDropdown/item-4.webp',
+      '/images/projects/customDropdown/item-3.webp',
+      '/images/projects/customDropdown/item-2.webp',
+      '/images/projects/customDropdown/item-1.webp',
+    ],
+    poster: '/images/projects/customDropdown/item-1.webp',
+    liveUrl: 'https://alexsmiian.github.io/CustomDropdown/',
+    repoUrl: 'https://github.com/AlexSmiian/CustomDropdown/tree/master/CustomDropdown',
     featured: true,
   },
   {

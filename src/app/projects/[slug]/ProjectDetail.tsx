@@ -5,6 +5,7 @@ import { m } from 'framer-motion';
 import { Tag, Button } from '@/shared/ui';
 import type { Project } from '@/modules/projects/types';
 import styles from './page.module.css';
+import Image from "next/image";
 
 function FadeUp({
   children,
@@ -28,7 +29,7 @@ function FadeUp({
 }
 
 export function ProjectDetail({ project }: { project: Project }) {
-  const screenshots = Array.from({ length: 4 }, (_, i) => i);
+  const screenshots = project.screenshots ?? [];
 
   return (
     <m.div
@@ -37,7 +38,6 @@ export function ProjectDetail({ project }: { project: Project }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.35 }}
     >
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <FadeUp>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
@@ -46,7 +46,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             </Link>
 
             <div className={styles.heroThumb} aria-hidden="true">
-              <span className={styles.heroIcon}>💻</span>
+              <Image src={project.poster} alt={``} width={320} height={170} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: '100%', height: '100%', }} />
             </div>
 
             <h1 className={styles.heroTitle}>{project.title}</h1>
@@ -102,19 +102,20 @@ export function ProjectDetail({ project }: { project: Project }) {
           </section>
         </FadeUp>
 
-        <FadeUp delay={0.4}>
-          <section className={styles.card}>
-            <h2 className={styles.cardTitle}>Screenshots</h2>
-            <div className={styles.screenshots}>
-              {screenshots.map((i) => (
-                <div key={i} className={styles.screenshot} aria-label={`Screenshot ${i + 1}`}>
-                  <span className={styles.screenshotIcon}>🖼️</span>
-                  <span className={styles.screenshotLabel}>Screenshot {i + 1}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeUp>
+        {screenshots.length > 0 && (
+          <FadeUp delay={0.4}>
+            <section className={styles.card}>
+              <h2 className={styles.cardTitle}>Screenshots</h2>
+              <div className={styles.screenshots}>
+                {screenshots.map((src, i) => (
+                  <div key={src} className={styles.screenshot} aria-label={`Screenshot ${i + 1}`}>
+                    <Image src={src} alt={`${project.title} screenshot ${i + 1}`} width={320} height={170} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: '100%', height: '100%', }} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          </FadeUp>
+        )}
 
         <FadeUp delay={0.5}>
           <div className={styles.backSection}>

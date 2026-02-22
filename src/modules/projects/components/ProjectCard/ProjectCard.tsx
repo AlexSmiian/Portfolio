@@ -6,6 +6,7 @@ import { Tag } from '@/shared/ui';
 import { Button } from '@/shared/ui';
 import type { Project } from '../../types';
 import styles from './ProjectCard.module.css';
+import Image from "next/image";
 
 type ProjectCardProps = {
   project: Project;
@@ -26,7 +27,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Thumbnail placeholder */}
       <div className={styles.thumbnail} aria-hidden="true">
-        <span className={styles.thumbnailIcon}>💻</span>
+        <Image src={project.poster} alt={``} width={320} height={170} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: '100%', height: '100%', }} />
         {project.featured && <span className={styles.featuredBadge}>Featured</span>}
       </div>
 
