@@ -163,7 +163,8 @@
 
 .scrollLabel {
   font-size: var(--text-xs);
-  color: var(--text-muted);
+  /* --text-secondary (#475569) gives 6.0:1 on light bg — passes WCAG AA */
+  color: var(--text-secondary);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }

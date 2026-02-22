@@ -125,7 +125,8 @@
 
 .statLabel {
   font-size: var(--text-xs);
-  color: var(--text-muted);
+  /* --text-secondary (#475569) gives 6.0:1 on light bg — passes WCAG AA */
+  color: var(--text-secondary);
   margin-top: var(--spacing-xs);
   text-align: center;
   letter-spacing: 0.03em;
