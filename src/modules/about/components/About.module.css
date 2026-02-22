@@ -135,6 +135,7 @@
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 
   .imageWrap {
@@ -145,10 +146,32 @@
     max-width: 280px;
     margin: 0 auto;
   }
+
+  .section {
+    padding: 72px var(--spacing-xl);
+  }
 }
 
 @media (max-width: 640px) {
   .section {
     padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .text p {
+    font-size: var(--text-base);
+  }
+
+  .statCard {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    gap: var(--spacing-md);
+  }
+
+  .statCard {
+    min-width: 80px;
   }
 }

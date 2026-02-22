@@ -105,3 +105,14 @@
   color: var(--accent-hover);
   opacity: 0.8;
 }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .body {
+    padding: var(--spacing-md);
+  }
+
+  .title {
+    font-size: var(--text-lg);
+  }
+}

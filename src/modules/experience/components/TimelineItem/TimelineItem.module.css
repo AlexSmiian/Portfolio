@@ -60,3 +60,18 @@
   gap: var(--spacing-xs);
   margin-top: var(--spacing-xs);
 }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .position {
+    font-size: var(--text-lg);
+  }
+
+  .content {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .item:not(:last-child)::before {
+    bottom: calc(-1 * var(--spacing-xl));
+  }
+}

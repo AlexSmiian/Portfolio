@@ -58,7 +58,7 @@
 }
 
 .contactLink {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--accent);
   transition: color var(--transition-fast);
@@ -176,5 +176,17 @@
 
   .layout {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .info,
+  .form {
+    padding: var(--spacing-lg);
+  }
+
+  .infoHeading {
+    font-size: var(--text-xl);
   }
 }

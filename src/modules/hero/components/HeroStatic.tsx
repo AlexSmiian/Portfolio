@@ -19,11 +19,16 @@ export function HeroStatic() {
         </p>
 
         <div className={styles.actions}>
-          <Button variant="primary" size="lg">
-            <a href="#projects">View Projects</a>
+          <Button variant="primary" size="lg" href="#projects">
+            View Projects
           </Button>
-          <Button variant="secondary" size="lg">
-            <a href="/cv.pdf" download>Download CV</a>
+          <Button
+            variant="secondary"
+            size="lg"
+            href="/cv/CV_Front-end-developer_Smiian_Oleksandr.pdf"
+            download
+          >
+            Download CV
           </Button>
         </div>
       </div>

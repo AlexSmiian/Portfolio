@@ -10,13 +10,13 @@ export function ContactInfo() {
       </p>
       <ul className={styles.links}>
         <li>
-          <a href="mailto:your@email.com" className={styles.link}>
-            your@email.com
+          <a href="mailto:smiyanaleksandr@gmail.com" className={styles.link}>
+            smiyanaleksandr@gmail.com
           </a>
         </li>
         <li>
           <a
-            href="https://github.com/yourname"
+            href="https://github.com/AlexSmiian"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
@@ -26,7 +26,7 @@ export function ContactInfo() {
         </li>
         <li>
           <a
-            href="https://linkedin.com/in/yourname"
+            href="https://www.linkedin.com/in/oleksandr-smiian-a1a2031a8"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}

@@ -58,9 +58,10 @@
 /* ── Secondary (neumorphic outline) ─────────────────────────────────────── */
 .secondary {
   background: var(--bg);
-  color: var(--accent);
+  /* --accent-hover (#4338CA) gives 6.7:1 on light bg — comfortable WCAG AA margin */
+  color: var(--accent-hover);
   box-shadow: var(--neu-raised-sm);
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--accent-hover);
 }
 
 .secondary:hover:not(:disabled) {

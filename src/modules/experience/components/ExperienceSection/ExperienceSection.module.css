@@ -12,3 +12,16 @@
   max-width: 720px;
   margin: 0 auto;
 }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    max-width: 100%;
+  }
+}

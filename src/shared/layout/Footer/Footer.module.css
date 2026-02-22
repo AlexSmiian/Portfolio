@@ -17,11 +17,13 @@
 
 .copy {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  /* --text-secondary (#475569) gives 6.0:1 on light bg — passes WCAG AA */
+  color: var(--text-secondary);
 }
 
 .name {
-  color: var(--accent);
+  /* --accent-hover (#4338CA) gives 6.7:1 on light bg — comfortable WCAG AA margin */
+  color: var(--accent-hover);
   font-weight: 600;
 }
 
@@ -32,7 +34,7 @@
 
 .link {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   transition: color var(--transition-fast);
 }
 

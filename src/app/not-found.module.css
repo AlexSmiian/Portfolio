@@ -28,3 +28,18 @@
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
 }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .code {
+    font-size: var(--text-4xl);
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .text {
+    font-size: var(--text-base);
+  }
+}

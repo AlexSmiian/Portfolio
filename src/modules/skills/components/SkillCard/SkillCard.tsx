@@ -3,6 +3,7 @@
 import { m, type Variants } from 'framer-motion';
 import type { Skill } from '../../types';
 import styles from './SkillCard.module.css';
+import Image from "next/image";
 
 type SkillCardProps = {
   skill: Skill;
@@ -32,14 +33,22 @@ export function SkillCard({ skill }: SkillCardProps) {
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
     >
       <div className={styles.header}>
-        <span className={styles.icon} role="img" aria-hidden="true">
-          {skill.icon}
-        </span>
+        <Image src={skill.icon} alt={skill.name} width={24} height={24} loading="lazy" />
+        {/*<span className={styles.icon} role="img" aria-hidden="true">*/}
+        {/*  {skill.icon}*/}
+        {/*</span>*/}
         <span className={styles.name}>{skill.name}</span>
         <span className={styles.levelLabel}>{LEVEL_LABELS[skill.level]}</span>
       </div>
 
-      <div className={styles.barTrack} aria-label={`${skill.name} proficiency: ${pct}%`}>
+      <div
+        className={styles.barTrack}
+        role="progressbar"
+        aria-valuenow={pct}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`${skill.name}: ${LEVEL_LABELS[skill.level]}`}
+      >
         <m.div
           className={styles.barFill}
           initial={{ width: 0 }}

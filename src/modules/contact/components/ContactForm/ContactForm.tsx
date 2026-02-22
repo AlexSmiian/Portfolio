@@ -31,30 +31,30 @@ export function ContactForm() {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>📧</span>
-                <a href="mailto:alex@example.com" className={styles.contactLink}>
-                  alex@example.com
+                <a href="mailto:smiyanaleksandr@gmail.com" className={styles.contactLink}>
+                  smiyanaleksandr@gmail.com
                 </a>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>💼</span>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/oleksandr-smiian-a1a2031a8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.contactLink}
                 >
-                  linkedin.com/in/alex
+                  Linkedin
                 </a>
               </li>
               <li className={styles.contactItem}>
                 <span className={styles.contactIcon}>🐙</span>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/AlexSmiian"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.contactLink}
                 >
-                  github.com/alex
+                  Github
                 </a>
               </li>
             </ul>
