@@ -5,6 +5,7 @@ import { MotionProvider } from '@/shared/providers/MotionProvider';
 import { Header } from '@/shared/layout/Header';
 import { Footer } from '@/shared/layout/Footer';
 import './globals.css';
+import {AnalyticsProvider} from "@/shared/providers/AnalyticsProvider";
 
 const inter = Inter({
   variable: '--font-inter',
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </MotionProvider>
         </ThemeProvider>
+        <AnalyticsProvider />
       </body>
     </html>
   );

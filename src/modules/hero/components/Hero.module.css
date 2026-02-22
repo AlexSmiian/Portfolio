@@ -9,74 +9,6 @@
   contain: layout style;
 }
 
-.blobs {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  /* Reduced blur: 70px → 40px — halves GPU cost */
-  filter: blur(40px);
-  opacity: 0.4;
-  /* Each blob on its own GPU layer */
-  will-change: transform;
-}
-
-[data-theme='dark'] .blob {
-  opacity: 0.2;
-}
-
-/* CSS keyframe animations — no JS, no main-thread cost */
-.blob1 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, #6366F1, transparent 70%);
-  top: 10%;
-  right: 5%;
-  animation: floatA 8s ease-in-out infinite;
-}
-
-.blob2 {
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, #818CF8, transparent 70%);
-  bottom: 15%;
-  right: 25%;
-  animation: floatB 10s ease-in-out infinite 1.5s;
-}
-
-.blob3 {
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, #A5B4FC, transparent 70%);
-  top: 60%;
-  left: 10%;
-  animation: floatA 12s ease-in-out infinite 3s;
-}
-
-.blob4 {
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(circle, #6366F1, transparent 70%);
-  top: 25%;
-  left: 30%;
-  animation: floatB 9s ease-in-out infinite 0.8s;
-}
-
-@keyframes floatA {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(12px, -26px) scale(1.05); }
-}
-
-@keyframes floatB {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(-14px, -20px) scale(1.04); }
-}
-
 /* ── Content ─────────────────────────────────────────────────────────────── */
 .inner {
   position: relative;
@@ -110,22 +42,6 @@
   letter-spacing: -0.03em;
 }
 
-.cursor {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 300;
-  margin-left: 2px;
-}
-
-.cursorBlink {
-  animation: blink 1.1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
 .subtitle {
   font-size: clamp(1.25rem, 3vw, 2rem);
   color: var(--text-secondary);
@@ -148,77 +64,20 @@
   flex-wrap: wrap;
 }
 
-/* ── Scroll indicator — CSS animation only ───────────────────────────────── */
-.scrollIndicator {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sm);
-  z-index: 1;
-}
-
-.scrollLabel {
-  font-size: var(--text-xs);
-  /* --text-secondary (#475569) gives 6.0:1 on light bg — passes WCAG AA */
-  color: var(--text-secondary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.scrollTrack {
-  width: 22px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  background: var(--bg);
-  box-shadow: var(--neu-pressed-sm);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5px;
-}
-
-.scrollDot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--accent-glow);
-  animation: scrollBounce 1.6s ease-in-out infinite;
-}
-
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(10px); }
-}
-
-/* ── Static gradient background (HeroStatic — no-JS / mobile) ───────────── */
-/*
-   Mirrors the 4 animated blob positions as frozen radial-gradient layers.
-   Pure CSS, zero repaints, zero JS — ideal for mobile Lighthouse.
-*/
 .sectionStatic {
   background:
-    /* blob1 — top-right, large indigo */
     radial-gradient(ellipse 420px 420px at 88% 12%,
       rgba(99, 102, 241, 0.22) 0%,
       transparent 70%),
-    /* blob2 — bottom-center-right, medium violet */
     radial-gradient(ellipse 320px 320px at 62% 82%,
       rgba(129, 140, 248, 0.17) 0%,
       transparent 70%),
-    /* blob3 — mid-left, soft lavender */
     radial-gradient(ellipse 200px 200px at 8% 62%,
       rgba(165, 180, 252, 0.14) 0%,
       transparent 70%),
-    /* blob4 — upper-center, faint indigo */
     radial-gradient(ellipse 160px 160px at 32% 28%,
       rgba(99, 102, 241, 0.10) 0%,
       transparent 70%),
-    /* subtle tinted base — lifts the flat neumorphic bg slightly */
     linear-gradient(
       135deg,
       color-mix(in srgb, var(--bg) 96%, #6366F1) 0%,
@@ -249,7 +108,6 @@
     );
 }
 
-/* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .section {
     padding: 0 var(--spacing-md);

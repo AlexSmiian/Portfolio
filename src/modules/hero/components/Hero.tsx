@@ -1,28 +1,37 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
-import { HeroStatic } from './HeroStatic';
-
-const HeroAnimated = dynamic(
-  () => import('./HeroAnimated').then((m) => ({ default: m.HeroAnimated })),
-  { ssr: false },
-);
+import { Button } from '@/shared/ui';
+import styles from './Hero.module.css';
 
 export function Hero() {
-  // null = not yet determined (SSR + first paint → always show static)
-  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+  return (
+    <section className={`${styles.section} ${styles.sectionStatic}`} id="hero">
+      <div className={styles.inner}>
+        <span className={styles.greeting}>Welcome to my portfolio</span>
 
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 769px)');
-    setIsDesktop(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
+        <h1 className={styles.heading}>
+          Hi, I&apos;m Alex
+        </h1>
 
-  // SSR and mobile: static version — zero JS animations, great LCP
-  if (!isDesktop) return <HeroStatic />;
+        <p className={styles.subtitle}>Frontend Developer</p>
 
-  return <HeroAnimated />;
+        <p className={styles.bio}>
+          I build fast, accessible, and visually polished web experiences with a focus on clean
+          code, great UX, and pixel-perfect design.
+        </p>
+
+        <div className={styles.actions}>
+          <Button variant="primary" size="lg" href="#projects">
+            View Projects
+          </Button>
+          <Button
+            variant="secondary"
+            size="lg"
+            href="/cv/CV_Front-end-developer_Smiian_Oleksandr.pdf"
+            download
+          >
+            Download CV
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
 }
