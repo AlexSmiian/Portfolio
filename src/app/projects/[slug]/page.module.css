@@ -1,0 +1,201 @@
+.page {
+  min-height: 100svh;
+  background: var(--bg);
+  padding-top: 72px; /* header height */
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.hero {
+  padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-xl);
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--spacing-xl);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--bg);
+  box-shadow: var(--neu-raised-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-fast);
+}
+
+.backLink:hover {
+  box-shadow: var(--neu-raised);
+  transform: translateY(-2px);
+}
+
+.heroThumb {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 10%, var(--bg)),
+    color-mix(in srgb, var(--accent) 28%, var(--bg))
+  );
+  box-shadow: var(--neu-raised-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroIcon {
+  font-size: 5rem;
+  filter: drop-shadow(0 4px 16px var(--accent-glow));
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-md);
+}
+
+.heroDescription {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl) var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--neu-raised);
+}
+
+.cardTitle {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--accent-light);
+}
+
+.cardText {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ── Technologies ────────────────────────────────────────────────────────── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+/* ── Features ────────────────────────────────────────────────────────────── */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featureDot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-top: 7px;
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+/* ── Screenshots ─────────────────────────────────────────────────────────── */
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.screenshot {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 6%, var(--bg)),
+    color-mix(in srgb, var(--accent) 15%, var(--bg))
+  );
+  border-radius: var(--radius-md);
+  box-shadow: var(--neu-pressed-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.screenshotIcon {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.screenshotLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ── Back button ─────────────────────────────────────────────────────────── */
+.backSection {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+  }
+
+  .content {
+    padding: 0 var(--spacing-md) var(--spacing-2xl);
+  }
+
+  .screenshots {
+    grid-template-columns: 1fr;
+  }
+}

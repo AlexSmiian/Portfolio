@@ -1,0 +1,93 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: box-shadow var(--transition-base), transform var(--transition-fast),
+    background-color var(--transition-base), color var(--transition-base);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────────────────── */
+.sm {
+  padding: 8px 18px;
+  font-size: var(--text-sm);
+}
+
+.md {
+  padding: 12px 26px;
+  font-size: var(--text-base);
+}
+
+.lg {
+  padding: 16px 36px;
+  font-size: var(--text-lg);
+}
+
+/* ── Primary (neumorphic accent fill) ───────────────────────────────────── */
+.primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--neu-raised-sm), 0 0 0 0 var(--accent-glow);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: var(--neu-raised), 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.primary:active:not(:disabled) {
+  box-shadow: var(--neu-pressed-sm);
+  transform: translateY(0) scale(0.97);
+}
+
+/* ── Secondary (neumorphic outline) ─────────────────────────────────────── */
+.secondary {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: var(--neu-raised-sm);
+  border: 1.5px solid var(--accent);
+}
+
+.secondary:hover:not(:disabled) {
+  box-shadow: var(--neu-raised);
+  transform: translateY(-2px);
+  background: var(--accent-light);
+}
+
+.secondary:active:not(:disabled) {
+  box-shadow: var(--neu-pressed-sm);
+  transform: translateY(0) scale(0.97);
+}
+
+/* ── Ghost (flat neumorphic) ─────────────────────────────────────────────── */
+.ghost {
+  background: var(--bg);
+  color: var(--text-secondary);
+  box-shadow: var(--neu-raised-sm);
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+  box-shadow: var(--neu-raised);
+  transform: translateY(-2px);
+}
+
+.ghost:active:not(:disabled) {
+  box-shadow: var(--neu-pressed-sm);
+  transform: translateY(0) scale(0.97);
+}

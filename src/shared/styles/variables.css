@@ -1,0 +1,99 @@
+/* ─── Light theme (default) ─────────────────────────────────────────────── */
+:root {
+  /* Neumorphic base colours */
+  --bg: #E8EDF2;
+  --shadow-light: #FFFFFF;
+  --shadow-dark: #C8D0D8;
+
+  /* Neumorphic shadow utilities */
+  --neu-raised: 6px 6px 16px var(--shadow-dark), -6px -6px 16px var(--shadow-light);
+  --neu-raised-sm: 3px 3px 8px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
+  --neu-raised-lg: 10px 10px 28px var(--shadow-dark), -10px -10px 28px var(--shadow-light);
+  --neu-pressed: inset 4px 4px 10px var(--shadow-dark), inset -4px -4px 10px var(--shadow-light);
+  --neu-pressed-sm: inset 2px 2px 6px var(--shadow-dark), inset -2px -2px 6px var(--shadow-light);
+
+  /* Accent */
+  --accent: #6366F1;
+  --accent-hover: #4F46E5;
+  --accent-light: rgba(99, 102, 241, 0.12);
+  --accent-glow: rgba(99, 102, 241, 0.35);
+
+  /* Text */
+  --text: #2D3748;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --text-on-accent: #FFFFFF;
+
+  /* Surface (matches --bg for neumorphism) */
+  --surface: #E8EDF2;
+
+  /* Divider */
+  --border: rgba(0, 0, 0, 0.08);
+
+  /* Feedback */
+  --success: #22C55E;
+  --error: #EF4444;
+
+  /* Typography */
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --section-padding: 100px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Z-index */
+  --z-base: 0;
+  --z-overlay: 10;
+  --z-header: 100;
+  --z-modal: 1000;
+}
+
+/* ─── Dark theme ─────────────────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --bg: #1E2330;
+  --shadow-light: #272F3F;
+  --shadow-dark: #151921;
+
+  --text: #E2E8F0;
+  --text-secondary: #A0AEC0;
+  --text-muted: #718096;
+
+  --surface: #1E2330;
+  --border: rgba(255, 255, 255, 0.06);
+
+  --accent-light: rgba(99, 102, 241, 0.15);
+  --accent-glow: rgba(99, 102, 241, 0.4);
+}

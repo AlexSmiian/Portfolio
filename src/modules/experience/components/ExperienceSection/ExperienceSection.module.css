@@ -1,0 +1,14 @@
+.section {
+  padding: var(--section-padding) var(--spacing-xl);
+  background-color: var(--color-bg-secondary);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.timeline {
+  max-width: 720px;
+  margin: 0 auto;
+}
