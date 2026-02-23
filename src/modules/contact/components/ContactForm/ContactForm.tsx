@@ -4,6 +4,10 @@ import { m, AnimatePresence } from 'framer-motion';
 import { SectionTitle, Button } from '@/shared/ui';
 import { useContactForm } from '../../hooks/useContactForm';
 import styles from './ContactForm.module.css';
+import GmailIcon from './gmail.svg';
+import Github from './github.svg';
+import LinkedIn from './linkedIn.svg';
+import Image from "next/image";
 
 export function ContactForm() {
   const { form, status, errors, handleChange, handleBlur, handleSubmit } = useContactForm();
@@ -30,13 +34,13 @@ export function ContactForm() {
 
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
-                <span className={styles.contactIcon}>📧</span>
+                <Image src={GmailIcon} alt={''} loading="lazy"  width={24} height={24} />
                 <a href="mailto:smiyanaleksandr@gmail.com" className={styles.contactLink}>
                   smiyanaleksandr@gmail.com
                 </a>
               </li>
               <li className={styles.contactItem}>
-                <span className={styles.contactIcon}>💼</span>
+                <Image src={LinkedIn} alt={''} loading="lazy"  width={24} height={24} />
                 <a
                   href="https://www.linkedin.com/in/oleksandr-smiian-a1a2031a8"
                   target="_blank"
@@ -47,7 +51,7 @@ export function ContactForm() {
                 </a>
               </li>
               <li className={styles.contactItem}>
-                <span className={styles.contactIcon}>🐙</span>
+                <Image src={Github} alt={''} loading="lazy"  width={24} height={24} />
                 <a
                   href="https://github.com/AlexSmiian"
                   target="_blank"

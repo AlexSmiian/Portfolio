@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { ContactFormData } from '../types';
+import { sendEmail } from '../actions/sendEmail';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
@@ -61,7 +62,7 @@ export function useContactForm() {
 
     setStatus('loading');
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await sendEmail(form);
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
       setTouched({});
