@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     'Portfolio of Alex — Frontend Developer specializing in React, Next.js, and TypeScript.',
   keywords: ['frontend', 'developer', 'react', 'nextjs', 'typescript', 'portfolio'],
   robots: { index: true, follow: true },
+  verification: {
+    google: '6zp3dXBpOWAJIpwhKyevo_XKm8wvKN07xQ0gVmPbDgo',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
